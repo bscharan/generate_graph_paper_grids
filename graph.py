@@ -51,6 +51,9 @@ def create_graph_paper(width, height, sections, subsections, padding):
 
     return image
 
+# TODO Add def dotted_line(): to create a dotted line.
+
+
 #sm - 640px -   
 #md -768  
 #lg-1024  

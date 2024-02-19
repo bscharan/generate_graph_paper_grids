@@ -25,18 +25,12 @@ def create_graph_paper(width, height, sections, subsections, padding):
                 line_width = 2
             if y == 0:
                 pos = pos - 2
-                # print(x," ",y)
                 line_width = 3
                 if x%5 == 0:
                     line_width = 4
-            # if x == sections:
-            #     pos = pos - 2
-            #     line_width = 4
             draw.line([(padding, pos), (width + padding , pos)], fill="white", width=line_width)
         x = x + 1
             
-
-
     # Draw vertical lines
     for x in range(0, sections + 1):
         for y in range (0, subsections):
@@ -47,13 +41,9 @@ def create_graph_paper(width, height, sections, subsections, padding):
                 line_width = 2
             if y == 0:
                 pos = pos - 2
-                # print(x," ",y)
                 line_width = 3
                 if x%5 == 0:
                     line_width = 4
-            # if x == sections:
-            #     pos = pos - 2
-            #     line_width = 4
             print("Pos: ", pos, " LineWidth: ", line_width)
             draw.line([(pos, padding), (pos, height + padding)], fill="white", width=line_width)
             if x == sections:
@@ -74,7 +64,7 @@ subsections = 10
 paper_width = 640  # Width of the image in pixels
 paper_height = 1280  # Height of the image in pixels
 padding = 0
-# line_spacing = paper_width // sections  # Spacing between lines in pixels
+
 # Create the graph paper image
 graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
 # Save the image

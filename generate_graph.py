@@ -1,5 +1,7 @@
 from PIL import Image, ImageDraw
 from math import floor
+import os
+
 
 def create_graph_paper(width, height, sections, subsections, padding):
     # Create a white background image
@@ -44,12 +46,19 @@ def create_graph_paper(width, height, sections, subsections, padding):
                 line_width = 3
                 if x%5 == 0:
                     line_width = 4
-            print("Pos: ", pos, " LineWidth: ", line_width)
+            # print("Pos: ", pos, " LineWidth: ", line_width)
             draw.line([(pos, padding), (pos, height + padding)], fill="white", width=line_width)
             if x == sections:
                 break
 
     return image
+
+
+
+directory = "./output"
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
 
 # TODO Add def dotted_line(): to create a dotted line.
 
@@ -71,31 +80,31 @@ padding = 0
 # Create the graph paper image
 graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
 # Save the image
-graph_paper.save("graph_paper_sm.png")
+graph_paper.save("./output/graph_paper_sm.png")
 
 paper_width = 768
 paper_height = 1280
 padding = 4
 graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-graph_paper.save("graph_paper_md.png")
+graph_paper.save("./output/graph_paper_md.png")
 
 paper_width = 1024
 paper_height = 1280  
 padding = 12
 graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-graph_paper.save("graph_paper_lg.png")
+graph_paper.save("./output/graph_paper_lg.png")
 
 paper_width = 1280
 paper_height = 1280  
 padding = 10
 graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-graph_paper.save("graph_paper_xl.png")
+graph_paper.save("./output/graph_paper_xl.png")
 
 paper_width = 1536
 paper_height = 1280  
 padding = 8
 graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-graph_paper.save("graph_paper_2xl.png")
+graph_paper.save("./output/graph_paper_2xl.png")
 
 
 # Display the image (optional)

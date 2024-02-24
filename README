@@ -3,7 +3,8 @@ HELLO UNIVERSE
 
 This is a python script to create graph_sheets of any size. 
 (I can't remember the exact word but it is same as cartesian grids we used in highschool math plotting)
-refer images above.
+
+refer images in ./output directory for reference.
 
 I am developer and use these images as backgroud reference for my designs (i.e., to figure out padding, etc on go)
 

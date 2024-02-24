@@ -4,8 +4,7 @@ import os
 
 
 def create_graph_paper(width, height, sections, subsections, padding):
-    # Create a white background image
-    
+      
     image = Image.new("RGB", (width, height), "black")
     draw = ImageDraw.Draw(image)
 
@@ -54,7 +53,6 @@ def create_graph_paper(width, height, sections, subsections, padding):
     return image
 
 
-
 directory = "./output"
 if not os.path.exists(directory):
     os.makedirs(directory)
@@ -63,49 +61,13 @@ if not os.path.exists(directory):
 # TODO Add def dotted_line(): to create a dotted line.
 
 
-#sm - 640px -   
-#md -768  
-#lg-1024  
-#xl-1280  
-#2xl-1536
+def generate_graph(width, height, padding, sections, subsections, tag):
+    graph_paper = create_graph_paper(width, height, sections, subsections, padding)
+    graph_paper.save(f"./output/graph_paper_{tag}.png")
 
-sections = 10
-subsections = 10
+generate_graph(640, 1000, 10, 10, 10, "sm")
+generate_graph(768, 1000, 4, 10, 10, "md")
+generate_graph(1024, 1280, 12, 10, 10, "lg")
+generate_graph(1280, 1280, 10, 10, 10, "xl")
+generate_graph(1536, 1280, 8, 10, 10, "2xl")
 
-# Define the dimensions of the graph paper, the spacing between lines, and the line style
-paper_width = 640  # Width of the image in pixels
-paper_height = 1280  # Height of the image in pixels
-padding = 0
-
-# Create the graph paper image
-graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-# Save the image
-graph_paper.save("./output/graph_paper_sm.png")
-
-paper_width = 768
-paper_height = 1280
-padding = 4
-graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-graph_paper.save("./output/graph_paper_md.png")
-
-paper_width = 1024
-paper_height = 1280  
-padding = 12
-graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-graph_paper.save("./output/graph_paper_lg.png")
-
-paper_width = 1280
-paper_height = 1280  
-padding = 10
-graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-graph_paper.save("./output/graph_paper_xl.png")
-
-paper_width = 1536
-paper_height = 1280  
-padding = 8
-graph_paper = create_graph_paper(paper_width, paper_height, sections, subsections, padding)
-graph_paper.save("./output/graph_paper_2xl.png")
-
-
-# Display the image (optional)
-#graph_paper.show()

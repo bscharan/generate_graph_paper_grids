@@ -2,7 +2,10 @@ HELLO UNIVERSE
 
 
 This is a python script to create graph_sheets of any size. 
-(I can't remember the exact word but it is same as cartesian grids we used in highschool math plotting)
+(these are similar cartesian graph_papers we used in highschool math plots, but instead of millimeter/centimeter divistions, it uses pixels.)
+refer to images in ./output directory.
+
+I am developer and use these images as backgroud reference for my UI/designs (i.e., to figure out padding, etc on websites)
 
 ====================================
 usage: generate_graph.py [-h] [--width WIDTH] [--height HEIGHT] [--sections SECTIONS] [--subsections SUBSECTIONS] [--padding PADDING]
@@ -21,13 +24,5 @@ options:
   --tag TAG             suffix for output file name, DefaultVaule: default
 ========================================
 
-refer images in ./output directory for reference.
-
-I am developer and use these images as backgroud reference for my designs (i.e., to figure out padding, etc on go)
-
-hope this will help.
-
-
-
-TODO:
+Future improvements I am working on:
 rather than increasing the width, make lines bold. I will make sure it will use dotted lines in near future.

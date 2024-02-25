@@ -70,7 +70,7 @@ def create_graph_paper(width, height, sections, subsections, padding):
                 line_width = 3
                 if x%5 == 0:
                     line_width = 4
-            draw.line([(padding, pos), (width + padding , pos)], fill="white", width=line_width)
+            draw.line([(padding, pos), (width + padding , pos)], fill="#36454f", width=line_width)
         x = x + 1
             
     # Draw vertical lines
@@ -87,7 +87,7 @@ def create_graph_paper(width, height, sections, subsections, padding):
                 if x%5 == 0:
                     line_width = 4
             # print("Pos: ", pos, " LineWidth: ", line_width)
-            draw.line([(pos, padding), (pos, height + padding)], fill="white", width=line_width)
+            draw.line([(pos, padding), (pos, height + padding)], fill="#36454f", width=line_width)
             if x == sections:
                 break
 
@@ -101,7 +101,7 @@ def create_graph_paper(width, height, sections, subsections, padding):
 
 def generate_graph(width, height, padding, sections, subsections, tag):
     graph_paper = create_graph_paper(width, height, sections, subsections, padding)
-    graph_paper.save(f"./output/graph_paper_{tag}.png")
+    graph_paper.save(f"./output/{tag}_graph_paper.png")
 
 def runDefault():
     
@@ -127,7 +127,7 @@ def main():
         parse_Arguments()
         print(f"""
         creating graph with Width  = {width}, height = {height}, padding = {padding},
-        sections = {sections}, subsections = {subsections}, output_file = ./output/graph_paper_{tag}.png""")
+        sections = {sections}, subsections = {subsections}, output_file = ./output/{tag}_graph_paper.png""")
         generate_graph(width, height, padding, sections, subsections, tag)
 
 
